@@ -126,7 +126,8 @@ yarn start
 ## :books: Referências
 
 - :link: [Recursos para o Frontend](https://github.com/devsuperior/dscatalog-resources/blob/9b5846b1157b296c3012f16c817f70ad1929fa6f/frontend-web/README.md)
-- :art: [Protótipos de tela para o Frontend no Figma](https://www.figma.com/file/H1SC2bo3Zaycm3mJxkkMC4/bds-desafio-layout)
+- :art: [Protótipos de tela para o Frontend no Figma](https://www.figma.com/file/YhRCC5Ly0tWOcxwxjheTJ3/desafio-github-api)
+- :link: [Roteamento no ReactJS](https://reactrouter.com/en/main/components/routes)
 - :wrench: [TreinaWeb - Instalando e gerenciando várias versões do NodeJS](https://www.treinaweb.com.br/blog/instalando-e-gerenciando-varias-versoes-do-node-js-com-nvm/)
 - :whale: [Criando um Container de Desenvolvimento no Visual Studio Code](https://code.visualstudio.com/docs/devcontainers/create-dev-container)
 - :books: Você pode aprender mais na [documentação do Create React App](https://facebook.github.io/create-react-app/docs/getting-started).
