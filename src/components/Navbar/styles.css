@@ -1,5 +1,37 @@
 .main-nav {
-  padding-left: 40px;
-  min-height: 70px;
-  background-color: #F6F6F6;
+  min-height: 62px;
+}
+
+.nav-logo-text,
+.nav-logo-text:hover {
+  color: #fff;
+}
+
+.nav-logo-text h4 {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+@media (min-width: 576px) {
+  .nav-logo-text h4 {
+     padding-left: 8px;
+  }
+}
+
+@media (min-width: 768px) {
+  .nav-logo-text h4 {
+     padding-left: 14px;
+  }
+}
+
+@media (min-width: 992px) {
+  .nav-logo-text h4 {
+     padding-left: 20px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .nav-logo-text h4 {
+     padding-left: 28px;
+  }
 }
