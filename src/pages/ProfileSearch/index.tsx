@@ -1,25 +1,27 @@
 import { useState } from 'react';
 import './styles.css';
 
-import ResultCard from 'components/ResultCard';
 import axios from 'axios';
 
 type FormData = {
-  cep: string;
+  user: string;
 }
 
-type Address = {
-  logradouro: string;
-  localidade: string;
-}
+type UserData = {
+  avatar_url: string;
+  url: string;
+  followers: string;
+  location: string;
+  name: string;
+};
 
-const CepSearch = () => {
-
-  const [address, setAddress] = useState<Address>();
+const ProfileSearch = () => {
 
   const [formData, setFormData] = useState<FormData>({
-    cep: '',
+    user: '',
   });
+
+  const [userData, setUserData] = useState<UserData>();
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const name = event.target.name;
@@ -30,45 +32,39 @@ const CepSearch = () => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    axios.get(`https://viacep.com.br/ws/${formData.cep}/json/`)
+    axios.get(`https://api.github.com/users/${formData.user}`)
       .then((response) => {
-        setAddress(response.data);
+        setUserData(response.data);
         console.log(response.data);
       })
       .catch((error) => {
-        setAddress(undefined);
+        setUserData(undefined);
         console.log(error);
       });
   }
 
   return (
-    <div className="cep-search-container">
-      <h1 className="text-primary">Busca CEP</h1>
-      <div className="container search-container">
+    <div className="search-container">
+      <div className="search-card">
+        <h2 className="text-primary">Encontre um perfil Github</h2>
         <form onSubmit={handleSubmit}>
           <div className="form-container">
             <input
               type="text"
-              name='cep'
-              value={formData.cep}
+              name='user'
+              value={formData.user}
               className="search-input"
-              placeholder="CEP (somente números)"
+              placeholder="Usuário Github"
               onChange={handleChange}
             />
             <button type="submit" className="btn btn-primary search-button">
-              Buscar
+              Encontrar
             </button>
           </div>
         </form>
-        {address &&
-          <>
-            <ResultCard title="Logradouro" description={address.logradouro} />
-            <ResultCard title="Localidade" description={address.localidade} />
-          </>
-        }
-      </div>
+      </div>      
     </div>
   );
 };
 
-export default CepSearch;
+export default ProfileSearch;
