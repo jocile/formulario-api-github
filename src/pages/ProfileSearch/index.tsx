@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './styles.css';
-
+import ResultCard from 'components/ResultCard';
+import CardLoader from './CardLoader';
 import axios from 'axios';
 
 type FormData = {
@@ -21,6 +22,8 @@ const ProfileSearch = () => {
     user: '',
   });
 
+  const [isLoading, setIsLoading] = useState(false);
+
   const [userData, setUserData] = useState<UserData>();
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -32,14 +35,18 @@ const ProfileSearch = () => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
+    setIsLoading(true);
+
     axios.get(`https://api.github.com/users/${formData.user}`)
       .then((response) => {
         setUserData(response.data);
-        console.log(response.data);
       })
       .catch((error) => {
         setUserData(undefined);
         console.log(error);
+      })
+      .finally(() => {
+        setIsLoading(false);
       });
   }
 
@@ -62,7 +69,21 @@ const ProfileSearch = () => {
             </button>
           </div>
         </form>
-      </div>      
+      </div>
+      <div className="search-card-info">
+        {userData &&
+          (isLoading ? (
+            <CardLoader />
+          ) : (
+            <ResultCard
+              avatar_url={userData.avatar_url}
+              url={userData.url}
+              followers={userData.followers}
+              location={userData.location}
+              name={userData.name}
+            />
+          ))}
+      </div>
     </div>
   );
 };
