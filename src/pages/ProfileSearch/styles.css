@@ -1,56 +1,115 @@
-.cep-search-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 20px;
-}
-
-.cep-search-container h1 {
-  font-weight: bold;
-  text-align: center;
-  margin: 50px 0;
-}
-
 .search-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 30px 40px;
-  background-color: #f6f6f6;
-  border-radius: 5px;
+  padding: 10px 10px 0 10px;
+  font-size: 38px;
+}
+
+.search-card {
+  padding: 10px 6px 20px 6px;
+  border-radius: 16px;
+  background: #e6f7ff;
+}
+
+.search-card h2 {
+  margin-bottom: 4px;
+  font-size: 0.6em;
 }
 
 .form-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
-.search-input {
-  background-color: #fff;
-  border: 1px solid #8c8c8c;
+.form-container input {
+  margin-bottom: 9px;
+  padding: 1px 1px 1px 3px;
+  color: #BFBFBF;
+  font-size: 0.42em;
+  font-weight: 400;
   border-radius: 4px;
-  font-size: 16px;
-  text-align: center;
-  height: 40px;
-  width: 240px;
-  margin-bottom: 25px;
+  border: 1px solid #d9d9d9;
+  background: #fff;
+  height: 30px;
+  width: 182px;
 }
-
-.search-input::placeholder {
-  color: #d3cccc;
-}
-
-.search-button {
-  height: 40px;
-  width: 160px;
-  margin-bottom: 35px;
-  color: #fff;
-}
-
 
 @media (min-width: 576px) {
-    .search-input {
-        width: 480px;
-    }
+  .search-container {
+     padding: 21px 39px 50px 36px;
+  }
+
+  .search-card {
+     padding: 21px 12px 21px 12px;
+  }
+
+  .search-card h2 {
+     margin-bottom: 7px;
+     font-size: 0.7em;
+  }
+
+  .form-container input {
+     margin-bottom: 14px;
+     padding: 3px 1px 3px 6px;
+     width: 213px;
+  }
+}
+
+@media (min-width: 768px) {
+  .search-container {
+     padding: 32px 59px 75px 54px;
+  }
+
+  .search-card {
+     padding: 32px 18px 32px 18px;
+  }
+
+  .search-card h2 {
+     margin-bottom: 9px;
+     font-size: 0.8em;
+  }
+
+  .form-container input {
+     margin-bottom: 19px;
+     padding: 4px 1px 4px 10px;
+     width: 242px;
+  }
+}
+
+@media (min-width: 992px) {
+  .search-container {
+     padding: 43px 79px 100px 72px;
+  }
+
+  .search-card {
+     padding: 43px 24px 43px 24px;
+  }
+
+  .search-card h2 {
+     margin-bottom: 12px;
+     font-size: 0.9em;
+  }
+
+  .form-container input {
+     margin-bottom: 24px;
+     padding: 6px 1px 6px 13px;
+     width: 272px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .search-container {
+     padding: 54px 99px 126px 90px;
+  }
+
+  .search-card {
+     padding: 54px 31px 54px 31px;
+  }
+
+  .search-card h2 {
+     font-size: 1em;
+  }
+
+  .form-container input {
+     padding: 8px 1px 8px 17px;
+     width: 298px;
+  }
 }

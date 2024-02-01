@@ -1,3 +1,5 @@
+import './styles.css';
+
 type Props = {
    title: string;
    description: string;
